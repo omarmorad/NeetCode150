@@ -18,6 +18,18 @@ bool HasDuplicate(int[] nums)
     }
     return false;
 }
+bool HasDuplicateWithSort(int[] nums)
+{
+    Array.Sort(nums);
+    for(int i = 0 ; i < nums.Length - 1; i++)
+    {
+        if(nums[i] == nums[i + 1])
+        {
+            return true;
+        }
+    }
+    return false;
+}
 
 
 int[] nums1 = {1, 2, 3, 1};
@@ -32,4 +44,4 @@ Console.WriteLine($"Output: {HasDuplicate(nums2)}");
 
 int[] nums3 = {1, 1, 1, 3, 3, 4, 3, 2, 4, 2};
 Console.WriteLine($"Input: [{string.Join(", ", nums3)}]");
-Console.WriteLine($"Output: {HasDuplicate(nums3)}"); 
+Console.WriteLine($"Output: {HasDuplicateWithSort(nums3)}"); 
